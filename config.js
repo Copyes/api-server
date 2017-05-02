@@ -17,3 +17,10 @@ exports.APP = {
   LIMIT: 10,
   PORT: 8000
 }
+
+exports.INFO = {
+  name: 'NodePress',
+  version: '1.0.0',
+  author: 'fanchao',
+  powered: ['Vue2', 'Nuxt.js', 'React', 'Angular4', 'Bootstrap4', 'jQuery', 'Video.js', 'Node.js', 'MongoDB', 'Express', 'Nginx']
+}
