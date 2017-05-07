@@ -26,8 +26,7 @@ const routes = app => {
             return false;
         }
 
-        
-
+        next();
     });
     // Api
     app.get('/', (req, res) => {
@@ -35,7 +34,8 @@ const routes = app => {
     });
     // Test
     app.all('/test', controllers.test.list);
-    
+    app.all('/test/:id', controllers.test.item);
+
      //    // set header
      //    const allowOrigins = ['http://120.24.83.35', 'http://127.0.0.1', 'http://localhost'];
 

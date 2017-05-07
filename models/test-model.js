@@ -30,9 +30,10 @@ const BearSchema = new mongoose.Schema({
     //     value: { type: String, validate: /\S+/ }
     // }]
 });
+BearSchema.set('toObject', { getters: true });
 
 // 翻页 + 自增ID插件配置
-// testSchema.plugin(mongoosePaginate);
+BearSchema.plugin(mongoosePaginate);
 BearSchema.plugin(autoIncrement.plugin, {
     model: 'Bear',
     field: 'id',
@@ -41,11 +42,13 @@ BearSchema.plugin(autoIncrement.plugin, {
 });
 
 
-// 时间更新
-// testSchema.pre('findOneAndUpdate', function(next) {
-//     this.findOneAndUpdate({}, { update_at: Date.now() });
-//     next();
-// });
+//时间更新
+BearSchema.pre('findOneAndUpdate', function(next) {
+    
+    this.findOneAndUpdate({}, { update_at: Date.now() });
+
+    next();
+});
 
 // 标签模型
 const Bear = mongoose.model('Bear', BearSchema);
