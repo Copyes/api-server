@@ -94,13 +94,13 @@ const routes = app => {
         // app.all('/article', controllers.article.list);
         // app.all('/article/:article_id', controllers.article.item);
 
-        // 404
-        // app.all('*', (req, res) => {
-        //     res.status(404).jsonp({
-        //         code: 0,
-        //         message: '无效的API请求'
-        //     })
-        // });
+    // 404
+    app.all('*', (req, res) => {
+        res.status(404).jsonp({
+            code: 0,
+            message: '无效的API请求'
+        })
+    });
 }
 
 module.exports = routes;
