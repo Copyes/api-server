@@ -17,16 +17,16 @@
   },
   "homepage": "https://github.com/Copyes/service#readme",
   "dependencies": {
-    "app-module-path": "^2.2.0",
-    "body-parser": "^1.17.1",
-    "express": "^4.15.2",
-    "helmet": "^3.5.0",
-    "idle-gc": "^1.0.1",
-    "jsonwebtoken": "^7.4.0",
-    "mongoose": "^4.9.6",
-    "mongoose-auto-increment": "^5.0.1",
-    "mongoose-paginate": "^5.0.3",
-    "request": "^2.81.0",
-    "yargs": "^7.1.0"
+    "koa": "^2.4.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.1.0",
+    "koa-router": "^7.3.0",
+    "mysql": "^2.15.0",
+    "sequelize": "^4.31.2"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
   }
 }
