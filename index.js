@@ -1,9 +1,10 @@
 const Koa = require('koa')
 const app = new Koa()
-const koaRouter = require('koa-router')()
 const json = require('koa-json')
 const logger = require('koa-logger')
 const bodyparser = require('koa-bodyparser')
+
+const router = require('./app/routes/index')
 
 app.use(bodyparser())
 app.use(json())
@@ -32,10 +33,11 @@ app.use(async (ctx, next) => {
     }
   }
 })
-// koaRouter.use('/movies', movies.routes())
+app.use(router.routes())
 
-// app.use(koaRouter.routes())
-
+app.on('error', (err, ctx) => {
+  console.log('server error', err)
+})
 app.listen(3000, () => {
   console.log('Koa is listening in 3000')
 })

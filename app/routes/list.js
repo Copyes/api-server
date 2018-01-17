@@ -1,4 +1,4 @@
-const movies = require('../controller/movies.js')
+const list = require('../controller/list')
 const router = require('koa-router')()
 
 router.options('/api/*', ctx => {
@@ -7,5 +7,6 @@ router.options('/api/*', ctx => {
   })
 })
 
-router.get('/movies/:page', movies.getMoviesList)
+router.get('/todos', list.getAllTodo)
+router.get('/todos/:id', list.getTodoItem)
 module.exports = router
